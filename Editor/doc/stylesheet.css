@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    color: #27272A;
+}
+
+h1 {
+	margin: 0;
+	padding: 16px;
+	width: 100%;
+	background-color: #53A8FF;
+	text-align: center;
+	color: #38383D;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h3 {
+	color: #3F75A2;
+}
+
+h4 {
+	color: #4682B4;
+}
+
+h5 {
+	color: #4682B4;
+}
+
+.string_usage {
+	font-style: italic;
+}
+
+#vertical_menu {
+	margin-left: 10%;
+	width: 80%;
+	position: relative;
+}
+
+#vertical_menu a {
+	text-decoration: none;
+}
+
+#commands {
+	margin-left: 10%;
+	width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.table_cell_expected_values {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.table_cell_limit {
+	font-style: italic;
+	white-space: nowrap;
+	text-align: center;
+}

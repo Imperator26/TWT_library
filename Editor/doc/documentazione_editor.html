@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>Editor</title>
+
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400i" rel="stylesheet">
+</head>
+<body>
+<h1>The Winter's Tale</h1>
+<h2>Editor</h2>
+
+<div class="vertical-menu">
+<ul>
+  <li><a href="#title_terrains">Luoghi</a></li>
+  <li><a href="#title_npcs">PNG</a></li>
+  <li><a href="#title_quests">Quest</a></li>
+</div>
+
+<div id = "commands">
+Per poter contribuire alla creazione di TWT i nostri pinguini dovranno prima verificare il tuo profilo e decidere se potrai essere un candidato adeguato. Per inviare la richiesta al Gran Pinguino utilizza il comando seguente all'interno dell'editor:
+<h4><i>/requesttobecomeeditor</i></h4>
+<p>Richiedi di diventare un editor di TWT.</p>
+
+
+<h3 id = "title_terrains">Luoghi</h3>
+
+<h4><i>/createterrain</i></h4>
+<p>Crea un nuovo luogo.</p>
+<p class = "string_usage">/createterrain [direction], [name], [description]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>direction</td><td class = "table_cell_expected_values">[north, east, west, south]</td><td>Indica la direzione verso cui si vuole creare il nuovo luogo rispetto al luogo attuale. Non &egrave; possibile creare un luogo in una direzione se ne &egrave; gi&agrave; presente uno.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>name</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il luogo che si sta creando avr&agrave; questo nome. Esso dovrebbe essere univoco all'interno di TWT.</td><td class = "table_cell_limit">24 caratteri</td>
+</tr>
+<tr>
+    <td>description</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il luogo che si sta creando avr&agrave; questa descrizione. Essa deve essere la pi&ugrave; accurata possibile di modo che l'avventuriero si possa immedesimare nell'avventura. Inoltre essa deve prescindere dalla situazione all'interno di TWT.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editname</i></h4>
+<p>Modifica il nome del luogo.</p>
+<p>/editname [name]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>name</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il luogo che si sta creando avr&agrave; questo nome. Esso dovrebbe essere univoco all'interno di TWT.</td><td class = "table_cell_limit">24 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editdescription</i></h4>
+<p>Modifica la descrizione del luogo.</p>
+<p class = "string_usage">/editdescription [description]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>description</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Modifica la descrizione di questo luogo. Essa deve essere la pi&ugrave; accurata possibile di modo che l'avventuriero si possa immedesimare nell'avventura. Inoltre essa deve prescindere dalla situazione all'interno di TWT.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editwelcomemessage</i></h4>
+<p>Modifica/Aggiunge il messaggio di benvenuto nel luogo.</p>
+<p class = "string_usage">/editwelcomemessage [from], [message]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>from</td><td class = "table_cell_expected_values">[north, east, west, south]</td><td>Indica da dove si deve arrivare per visualizzare il messaggio di benvenuto.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>message</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il messaggio di benvenuto &egrave; un messaggio personalizzato che compare solamente quando si arriva in un luogo da una certa direzione. Ogni luogo pu&ograve; avere quattro messaggi di benvenuto; ognuno per ogni direzione. A differenza della descrizione del luogo, il messaggio di benvenuto dipende dal luogo di provenienza e ne &egrave; consigliato l'uso per rendere pi&ugrave; fluido il passaggio da un luogo ad un'altro.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+
+<h3 id = "title_npcs">PNG (Personaggi Non Giocabili)<h3>
+
+<h4><i>/addnpc</i></h4>
+<p>Crea un nuovo personaggio e lo posizioni all'interno del luogo in cui avviene la creazione. L'avventuriero potr&agrave; interagire con esso attraverso il comando <i>/talk</i>; i PNG risponderanno con ci&ograve; che viene inserito nel parametro <i>messaggio</i>.</p>
+<p class = "string_usage">/addnpc [name], [message]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>name</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Rappresenta il nome che avr&agrave; il PNG. Esso dovrebbe essere univoco all'interno di TWT. Utilizzare nomi propri coerenti con il tipo di personaggio che si sta creando. Esempi: "Minrar", "Scad guardia di Eskon", "Zaffira"</td><td class = "table_cell_limit">24 caratteri</td>
+</tr>
+<tr>
+    <td>message</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il messaggio viene visualizzato ogni qual volta l'avventuriero interagisce con il PNG.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/shownpcs</i></h4>
+<p>Mostra tutti i PNG presenti nel luogo in cui ci si trova. Per ogni PNG vengono riportate inoltre anche le quest ad essi associate.</p>
+
+
+<h3 id = "title_quests">Quest<h3>
+
+<h4><i>/addquest</i></h4>
+<p>Crea ed associa ad un PNG una nuova quest.</p>
+<p class = "string_usage">/addquest [issuer], [type], [parameters], [rewards]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>issuer</td><td class = "table_cell_expected_values">[0-9]</td><td>Corrisponde al npc_id ovvero l'id del PNG a cui si vuole associare la quest.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>type</td><td class = "table_cell_expected_values">[kill, talk, give]</td><td>Indica il tipo di quest che si vuole creare. Al momento sono disponibili solamente 3 tipologie di quest: "kill", "talk" e "give".</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>parameters</td><td class = "table_cell_expected_values">[0-9], &</td><td>Questo campo varia in base al tipo di quest scelta. Esso contiene tutti i parametri riguardanti la missione, i quali devono essere separati tra di loro dal simbolo ampersand (&). Vedi la sezione "Tipi di Quest".</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+<tr>
+    <td>rewards</td><td class = "table_cell_expected_values">[0-9], &</td><td>Come per il campo <i>parametri</i>, il campo ricompense contiene una stringa di valori separati da &. Vedi tabella "Ricompense Quest".</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4>Tipi di Quest</h4>
+
+<h5>kill</h5>
+<p>La tipologia kill consiste nel dover uccidere un certo numero [quantity] di creature [creature_id].</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>creature_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Id identificativo della/e creatura/e da uccidere. Vedi tabella delle "Creature".</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>quantity</td><td class = "table_cell_expected_values">[0-9]</td><td>Indica la quantit&agrave; di creature da uccidere necessario al completamento della quest.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+</table>
+<p>Esempi di stringhe valide:<br>
+1&1    l'avventuriero dovr&agrave; uccidere una sola creatura con id 1<br>
+3&2    l'avventuriero dovr&agrave; uccidere due creature con id 3
+</p>
+
+<h5>talk</h5>
+<p>La tipologia kill consiste nel dover parlare con uno specifico PNG [npc_id].</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>npc_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Id identificativo del PNG con cui parlare. Si pu&ograve; trovare attraverso il comando /shownpcs.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+</table>
+<p>Esempio di stringa valida:<br>
+3    l'avventuriero dovr&agrave; parlare con il PNG Zaffira (npc_id=3)
+</p>
+
+<h5>give</h5>
+<p>La tipologia give consiste nel dover consegnare una certa quantit&agrave; [quantity] di oggetti [item_id] ad un PNG [npc_id].</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>npc_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Id identificativo del PNG a cui si devono consegnare gli oggetti. Si pu&ograve; trovare attraverso il comando /shownpcs.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>item_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Id identificativo dell'oggetto da consegnare. Vedi tabella degli "Oggetti"</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>quantity</td><td class = "table_cell_expected_values">[0-9]</td><td>Indica la quantit&agrave; di oggetti da consegnare necessari al completamento della quest.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+</table>
+<p>Esempi di stringhe valide:<br>
+5&1&1    l'avventuriero dovr&agrave; consegnare al PNG con npc_id=5 l'oggetto con item_id=1 in quantit&agrave; dell'ordine dell'unit&agrave;<br>
+1&2&3&4&5    l'avventuriero dovr&agrave; consegnare al PNG con npc_id=1 3 oggetti con item_id=2 e 5 oggetti con item_id=4 per completare la quest
+</p>
+
+<h4>Ricompense Quest</h4>
+!!! Potrei sostituire la seguente tabella con il campo "difficolt&agrave;" il quale impone la difficolt&agrave; della quest e calcola automaticamente soldi ed esperienza ricevuti !!!
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>soldi</td><td class = "table_cell_expected_values">[0-9]</td><td>Soldi guadagnati da dall'avventuriero al completamento della quest.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>esperienza</td><td class = "table_cell_expected_values">[0-9]</td><td>Indica l'esperienza guadagnata dall'avventuriero al completamento della quest.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+</table>
+<p>Esempio di stringa valida: 100&10 Al completamento della quest l'avventuriero ricever&agrave; 100 soldi e 10 punti esperienza.</p>
+
+<h4><i>/showquest</i></h4>
+<p>Mostra le impostazioni della quest richiesta attraverso il suo id.</p>
+<p class = "string_usage">/showquest [quest_id]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+</table>
+
+<h4><i>/editquesttitle</i></h4>
+<p>Modifica il nome della quest richiesta.</p>
+<p class = "string_usage">/editquesttitle [quest_id], [title]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>title</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Modifica il titolo della quest.</td><td class = "table_cell_limit">24 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editquestsummary</i></h4>
+<p>Modifica il nome della quest richiesta.</p>
+<p class = "string_usage">/editquestsummary [quest_id], [summary]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>summary</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Il messaggio viene visualizzato ogni qual volta l'avventuriero interagisce con il PNG.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editmessageprequest</i></h4>
+<p>Modifica il nome della quest richiesta.</p>
+<p>/editmessageprequest [quest_id], [msg_pre_quest]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>msg_pre_quest</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Questo messaggio viene visualizzato Prima di cominciare la quest.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editmessageduringquest</i></h4>
+<p>Modifica il nome della quest richiesta.</p>
+<p class = "string_usage">/editmessageduringquest [quest_id], [msg_during_quest]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>msg_during_quest</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Questo messaggio viene visualizzato quando l'avventuriero interagisce con il PNG da cui ha accettato la quest.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<h4><i>/editmessagepostquest</i></h4>
+<p>Modifica il nome della quest richiesta.</p>
+<p class = "string_usage">/editmessagepostquest [quest_id], [msg_post_quest]</p>
+<table>
+<tr>
+    <th>Parametri</th><th>Valori Possibili</th><th>Descrizione</th><th>Limiti</th>
+</tr>
+<tr>
+    <td>quest_id</td><td class = "table_cell_expected_values">[0-9]</td><td>Il parametro deve essere l'id della quest, il quale viene visualizzato alla sua creazione oppure attraverso il comando /shownpcs nel luogo del PNG a cui la quest &egrave; associata.</td><td class = "table_cell_limit">Nessuno</td>
+</tr>
+<tr>
+    <td>msg_post_quest</td><td class = "table_cell_expected_values">[a-z], [A-Z], [0-9]</td><td>Questo messaggio viene visualizzato al completamento della quest.</td><td class = "table_cell_limit">300 caratteri</td>
+</tr>
+</table>
+
+<p><b>N.B.</b> Gli spazi prima e dopo la virgola sono opzionali.</p>
+<p>!!! Colonna delle eccezioni inutile. Da rimuovere. !!!</p>
+<div>
+</body>
+</html>
